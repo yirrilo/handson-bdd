@@ -13,7 +13,8 @@
 				<artifactId>maven-surefire-plugin</artifactId>
 				<version>2.12.1</version>
 				<configuration>
-					<argLine>-server -ea -DsurefireArgLine="target/coverage-reports/jacoco-ut.exec"</argLine>
+					<argLine>-server -ea
+						-DsurefireArgLine="target/coverage-reports/jacoco-ut.exec"</argLine>
 				</configuration>
 			</plugin>
 			<plugin>
@@ -23,6 +24,19 @@
 					<source>1.9</source>
 					<target>1.9</target>
 				</configuration>
+			</plugin>
+			<plugin>
+				<groupId>com.github.cukedoctor</groupId>
+				<artifactId>cukedoctor-maven-plugin</artifactId>
+				<version>1.2.1</version>
+				<executions>
+					<execution>
+						<goals>
+							<goal>execute</goal>
+						</goals>
+						<phase>install</phase>
+					</execution>
+				</executions>
 			</plugin>
 		</plugins>
 	</build>
@@ -47,17 +61,17 @@
 		</dependency>
 		<!-- https://mvnrepository.com/artifact/org.easytesting/fest-assert -->
 		<dependency>
-		    <groupId>org.easytesting</groupId>
-		    <artifactId>fest-assert</artifactId>
-		    <version>1.4</version>
-		    <scope>test</scope>
+			<groupId>org.easytesting</groupId>
+			<artifactId>fest-assert</artifactId>
+			<version>1.4</version>
+			<scope>test</scope>
 		</dependency>
 		<!-- https://mvnrepository.com/artifact/org.mockito/mockito-core -->
 		<dependency>
-		    <groupId>org.mockito</groupId>
-		    <artifactId>mockito-core</artifactId>
-		    <version>2.10.0</version>
-		    <scope>test</scope>
+			<groupId>org.mockito</groupId>
+			<artifactId>mockito-core</artifactId>
+			<version>2.10.0</version>
+			<scope>test</scope>
 		</dependency>
 
 	</dependencies>
